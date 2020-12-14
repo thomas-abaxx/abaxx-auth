@@ -1,0 +1,6 @@
+pubnub
+pyjwt
+python-jose
+peewee
+validator
+pyyaml

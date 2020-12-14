@@ -1,0 +1,156 @@
+# This sets defualt scope values for each role type.
+clearing_super_user:
+  - write:orders
+  - read:order
+  - update:scope
+  - update:instruments
+  - admin:admin
+---
+clearing_member_admin:
+  - write:orders
+  - read:order
+  - update:scope
+  - update:instruments
+  - admin:admin
+---
+client_ledger_manager:
+  - write:orders
+  - read:order
+  - update:scope
+  - update:instruments
+  - admin:admin
+---
+      
+clearing_user:
+  - write:orders
+  - read:order
+  - update:scope
+  - update:instruments
+  - admin:admin
+---
+market_information_subscription_user_unlimited:
+  - write:orders
+  - read:order
+  - update:scope
+  - update:instruments
+  - admin:admin
+---
+market_operations_supervisor:
+  - write:orders
+  - read:order
+  - update:scope
+  - update:instruments
+  - admin:admin
+---
+market_operations_supervisor_limited:
+  - write:orders
+  - read:order
+  - update:scope
+  - update:instruments
+  - admin:admin
+---    
+gateway_user:
+  - read:order
+---
+order_routing_user:
+  - read:order
+---
+regulatory_superuser:
+  - write:orders
+  - read:order
+  - update:scope
+  - update:instruments
+  - admin:admin   
+---   
+market_operations_observer:
+  - read:order
+---
+market_operations_limited:
+  - read:order
+---  
+script_user:    
+  - read:order
+---
+market_information_subscription_user:
+  - read:order
+---
+shared_ordergroup_access:
+  - read:order
+---  
+metax_trading_super_user:
+  - read:order
+    
+---
+metax_trading_super_user_external:
+  - read:order
+    
+---
+
+super_user:
+  - read:order
+---  
+shared_ordergoup_access:
+  - read:order
+    
+---
+subscribing_super_user_external:
+  - read:order
+---
+subscribing_super_user_external_trades_only:
+  - read:order
+---
+system_operations:
+  - read:order
+---
+system_operations_observer:
+  - read:order
+---  
+system_operations_supervisor:
+  - read:order
+---
+system_surveillance:
+  - read:order
+---  
+trading_member_admin:
+  - read:order
+    
+---
+trading_super_user_external:
+  - read:order
+---
+trading_super_user_unlimited:
+  - read:order
+---  
+trading_super_user:
+  - read:order
+    
+---  
+trading_user:
+  - read:order
+---
+trading_user_unlimited:
+  - read:order
+---  
+user_without_session:
+  - read:order
+    
+---
+admin:
+  - read:order
+    
+---
+esg_publisher:
+  - read:order
+    
+---  
+esg_visitor:
+  - read:order
+    
+---  
+test_user:
+  - read:order
+
+--- 
+pending:
+  - pending:pending
+

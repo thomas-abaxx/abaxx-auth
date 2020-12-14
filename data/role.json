@@ -1,0 +1,169 @@
+[{
+  "role": "clearing_super_user",
+  "description": "a clearing user is responsible for xyz tasks"
+},
+{
+  "role": "clearing_member_admin",
+  "description": "a clearing user is responsible for xyz tasks"
+},
+{
+  "role": "clearing_user",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "client_ledger_manager",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "market_information_subscription_user",
+  "description": "this is a default clearing user"
+},
+
+{
+  "role": "market_information_subscription_user_unlimited",
+  "description": "this is a default clearing user"
+},
+
+{
+  "role": "market_operations_observer",
+  "description": "this is a default clearing user"
+},
+
+
+{
+  "role": "market_operations_supervisor_limited",
+  "description": "this is a default clearing user"
+},
+
+{
+  "role": "market_operations_limited",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "order_routing_user",
+  "description": "this is a default clearing user"
+},
+
+
+{
+  "role": "regulatory_superuser",
+  "description": "this is a default clearing user"
+},
+
+
+{
+  "role": "script_user",
+  "description": "this is a default clearing user"
+},
+
+
+
+{
+  "role": "shared_ordergroup_access",
+  "description": "this is a default clearing user"
+},
+
+
+{
+  "role": "script_user",
+  "description": "this is a default clearing user"
+},
+
+
+{
+  "role": "gateway_user",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "metax_trading_super_user",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "metax_trading_super_user_external",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "shared_ordergoup_access",
+  "description": "this is a default clearing user"
+},
+
+{
+  "role": "subscribing_super_user_external",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "subscribing_super_user_external_trades_only",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "trading_member_admin",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "trading_super_user",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "trading_super_user_external",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "trading_super_user_unlimited",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "trading_user",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "trading_user_unlimited",
+  "description": "this is a default clearing user"
+},
+
+{
+  "role": "user_without_session",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "admin",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "esg_publisher",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "esg_visitor",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "test_user",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "super_user",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "system_operations",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "system_operations_observer",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "system_operations_supervisor",
+  "description": "this is a default clearing user"
+},
+{
+  "role": "system_surveillance",
+  "description": "this is a default clearing user"
+},
+
+{
+  "role": "pending",
+  "description": "this is a pending role"
+}
+]
+

@@ -1,0 +1,33 @@
+[
+  {
+  "name": "write:orders",
+  "description": "able to write orders"
+},
+{
+  "name": "read:order",
+  "description": "this is a default user"
+},
+{
+  "name": "update:scope",
+  "description": "allows to change user permissions"
+},
+{
+  "name": "update:priceBand",
+  "description": "update the price band"
+},
+{
+  "name": "update:instruments",
+  "description": "update the instruments"
+},
+{
+  "name": "read:instruments",
+  "description": "read the instruments"
+},
+{
+  "name": "pending:pending",
+  "description": "read the instruments"
+},
+{
+  "name": "admin:admin",
+  "description": "full admin permissions"
+}]

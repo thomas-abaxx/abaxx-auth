@@ -1,0 +1,98 @@
+service: abaxx-auth
+
+provider:
+  name: aws
+  runtime: python3.7
+  stage: dev
+  region: us-east-1
+
+  environment:
+    JWT_SECRET: XaA6JrXR1G0
+    JWT_ALGORITHM: HS256
+    JWT_TOKEN_EXPIRY: 86400
+    SECRETKEY: secret
+    DOMAIN: abaxx.tech
+    DB_HOST: localhost
+    DB_PORT: 5432
+    DB_USER: postgres
+    DB_PASSWORD: nimmo1
+    DB_NAME: exchange
+    # DB_HOST: abaxx-lake.cx6065euly9v.us-east-1.rds.amazonaws.com
+    # DB_PORT: 5432
+    # DB_USER: postgres
+    # DB_PASSWORD: NTPejvetRTSKSG0BbxMeKHlpxh5mBm
+    # DB_NAME: exchange
+    PN_PK: pub-c-39a87d88-d17c-4c72-948b-cc46bf54fed9
+    PN_SK: sub-c-884ea2b8-9939-11ea-8e71-f2b83ac9263d
+    PN_UUID: fec2f360-062b-449c-a468-1290282e7812
+    SYSTEM_USER: MOPS4
+    SYSTEM_PASSWORD: fff0
+    SYSTEM_MEMBER: TE
+    
+    # REDIS_HOST: abaxx-redis-dev.s1mztk.ng.0001.use1.cache.amazonaws.com
+    # REDIS_PORT: 6379
+    # REDIS_DB: 2
+    # VERSION: 1.0.0
+    # DB_HOST: abaxx-lake.cx6065euly9v.us-east-1.rds.amazonaws.com
+    # DB_PORT: 5432
+    # DB_USER: postgres
+    # DB_PASSWORD: NTPejvetRTSKSG0BbxMeKHlpxh5mBm
+    # DB_NAME: exchange
+
+
+package:
+  exclude:
+    - node_modules/**
+    - venv/**
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+    zip: true
+    slim: false
+    noDeploy:
+      - pip    
+    
+functions:
+  auth:
+    handler: handler.auth
+    events:
+      - http:
+          path: auth
+          method: post
+  users:
+    handler: handler.users
+    events:
+      - http:
+          path: users
+          method: get
+      - http:
+          path: users
+          method: post
+
+  members:
+    handler: handler.members
+    events:
+      - http:
+          path: members
+          method: get
+      - http:
+          path: members
+          method: post
+  init:
+    handler: handler.init
+    events:
+      - http:
+          path: init
+          method: get
+  updateUserRole:
+    handler: handler.updateUserRole
+    events:
+      - http:
+          path: updateUserRole
+          method: post
+           
+
+plugins:
+  - serverless-python-requirements
+  - serverless-offline
