@@ -173,7 +173,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/abaxx-auth/dev/1609860554882-2021-01-05T15:29:14.882Z/abaxx-auth.zip"
+                "S3Key": "serverless/abaxx-auth/dev/1609863958914-2021-01-05T16:25:58.914Z/abaxx-auth.zip"
               },
               "FunctionName": "abaxx-auth-dev-auth",
               "Handler": "handler.temp_function",
@@ -209,14 +209,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "AuthLambdaVersiontiAS1hPstYoJpKBSs7o4DsTDTkLvGmp3aRkleEk": {
+          "AuthLambdaVersion8QsPgUtbCvQDdQ8rPGEZvpAXOqzdp1YDMARbXOrKg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AuthLambdaFunction"
               },
-              "CodeSha256": "WPXIsRiD//Swp+HPBtkrWtcrmHeiFH6W/EURtnJP4lI="
+              "CodeSha256": "1YHroYtkyJsE5x79J/UmUGfLQvTzPIYT7HyXECaAQoI="
             }
           },
           "ApiGatewayRestApi": {
@@ -334,7 +334,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1609860544629": {
+          "ApiGatewayDeployment1609863948181": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -394,7 +394,7 @@
           "AuthLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AuthLambdaVersiontiAS1hPstYoJpKBSs7o4DsTDTkLvGmp3aRkleEk"
+              "Ref": "AuthLambdaVersion8QsPgUtbCvQDdQ8rPGEZvpAXOqzdp1YDMARbXOrKg"
             }
           },
           "ServiceEndpoint": {
@@ -543,7 +543,7 @@
         "timeout": 6,
         "runtime": "python3.7",
         "vpc": {},
-        "versionLogicalId": "AuthLambdaVersiontiAS1hPstYoJpKBSs7o4DsTDTkLvGmp3aRkleEk"
+        "versionLogicalId": "AuthLambdaVersion8QsPgUtbCvQDdQ8rPGEZvpAXOqzdp1YDMARbXOrKg"
       }
     },
     "serviceFilename": "serverless.yml",
@@ -552,7 +552,7 @@
     "artifact": "/Users/tobrien/development/abaxx/abaxx-auth/.serverless/abaxx-auth.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/abaxx-auth/dev/1609860554882-2021-01-05T15:29:14.882Z",
+    "artifactDirectoryName": "serverless/abaxx-auth/dev/1609863958914-2021-01-05T16:25:58.914Z",
     "artifact": "abaxx-auth.zip"
   }
 }

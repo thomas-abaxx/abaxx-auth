@@ -36,6 +36,11 @@ def temp_function(event, context):
 
     response = {
         "statusCode": 200,
+        "headers": {
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Credentials' : 'true',
+        'Content-Type': 'application/json'
+         },
         "body": json.dumps({ 
             "internal_token": internalToken
         })
@@ -94,7 +99,6 @@ def auth(event, context):
         "statusCode": 200,
         "headers": {
         'Access-Control-Allow-Origin' : '*',
-        'Access-Control-Allow-Headers':'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
         'Access-Control-Allow-Credentials' : 'true',
         'Content-Type': 'application/json'
          },
@@ -110,7 +114,6 @@ def auth(event, context):
         "statusCode": 200,
         "headers": {
         'Access-Control-Allow-Origin' : '*',
-        'Access-Control-Allow-Headers':'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
         'Access-Control-Allow-Credentials' : 'true',
         'Content-Type': 'application/json'
          },

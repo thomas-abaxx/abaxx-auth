@@ -56,8 +56,8 @@ functions:
     events:
       - http:
           path: auth
-          cors: true 
           method: post
+          cors: true 
   # users:
   #   handler: handler.users
   #   events:
