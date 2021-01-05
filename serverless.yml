@@ -11,20 +11,17 @@ provider:
     JWT_ALGORITHM: HS256
     JWT_TOKEN_EXPIRY: 86400
     SECRETKEY: secret
-    DOMAIN: abaxx.tech
+    DOMAIN: auth
     DB_HOST: localhost
     DB_PORT: 5432
     DB_USER: postgres
     DB_PASSWORD: nimmo1
     DB_NAME: exchange
-    # DB_HOST: abaxx-lake.cx6065euly9v.us-east-1.rds.amazonaws.com
+    # DB_HOST: ai-lake-dev.cx6065euly9v.us-east-1.rds.amazonaws.com
     # DB_PORT: 5432
     # DB_USER: postgres
     # DB_PASSWORD: NTPejvetRTSKSG0BbxMeKHlpxh5mBm
     # DB_NAME: exchange
-    PN_PK: pub-c-39a87d88-d17c-4c72-948b-cc46bf54fed9
-    PN_SK: sub-c-884ea2b8-9939-11ea-8e71-f2b83ac9263d
-    PN_UUID: fec2f360-062b-449c-a468-1290282e7812
     SYSTEM_USER: MOPS4
     SYSTEM_PASSWORD: fff0
     SYSTEM_MEMBER: TE
@@ -55,42 +52,43 @@ custom:
     
 functions:
   auth:
-    handler: handler.auth
+    handler: handler.temp_function
     events:
       - http:
           path: auth
+          cors: true 
           method: post
-  users:
-    handler: handler.users
-    events:
-      - http:
-          path: users
-          method: get
-      - http:
-          path: users
-          method: post
+  # users:
+  #   handler: handler.users
+  #   events:
+  #     - http:
+  #         path: users
+  #         method: get
+  #     - http:
+  #         path: users
+  #         method: post
 
-  members:
-    handler: handler.members
-    events:
-      - http:
-          path: members
-          method: get
-      - http:
-          path: members
-          method: post
-  init:
-    handler: handler.init
-    events:
-      - http:
-          path: init
-          method: get
-  updateUserRole:
-    handler: handler.updateUserRole
-    events:
-      - http:
-          path: updateUserRole
-          method: post
+  # members:
+  #   handler: handler.members
+  #   events:
+  #     - http:
+  #         path: members
+  #         method: get
+  #     - http:
+  #         path: members
+  #         method: post
+  # init:
+  #   handler: handler.init
+  #   events:
+  #     - http:
+  #         path: init
+  #         method: get
+  # updateUserRole:
+  #   handler: handler.updateUserRole
+  #   events:
+  #     - http:
+  #         path: updateUserRole
+  #         method: post
            
 
 plugins:

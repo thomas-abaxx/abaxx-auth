@@ -79,19 +79,15 @@ shared_ordergroup_access:
 ---  
 metax_trading_super_user:
   - read:order
-    
 ---
 metax_trading_super_user_external:
   - read:order
-    
 ---
-
 super_user:
   - read:order
 ---  
 shared_ordergoup_access:
   - read:order
-    
 ---
 subscribing_super_user_external:
   - read:order
@@ -113,7 +109,6 @@ system_surveillance:
 ---  
 trading_member_admin:
   - read:order
-    
 ---
 trading_super_user_external:
   - read:order
@@ -133,11 +128,9 @@ trading_user_unlimited:
 ---  
 user_without_session:
   - read:order
-    
 ---
 admin:
   - read:order
-    
 ---
 esg_publisher:
   - read:order
@@ -149,7 +142,6 @@ esg_visitor:
 ---  
 test_user:
   - read:order
-
 --- 
 pending:
   - pending:pending

@@ -10,7 +10,7 @@ import json
 import logging
 import time
 
-from modules import *
+# from modules import *
 from datetime import timedelta, datetime as dt
 from validator import Validator, validate
 from jose import jwt
@@ -21,7 +21,27 @@ logger = logging.getLogger("handler_logger")
 logger.setLevel(logging.DEBUG)
 JWT_SECRET = os.environ.get("JWT_SECRET")
 
+def temp_function(event, context):
+    body = _get_event_body(event)
+    body['type'] = 'echoReply'
 
+    #verify & decode Abaxx ID
+    id_token = verify_token(body['token'])
+    #Decoded data from token AbaxxID Identity and username
+    identity = id_token['sub']
+    role = 'clearing_super_user'
+  
+    #Create New Token with Scope
+    internalToken = encodeInternalToken(identity,role, 'admin:admin')
+
+    response = {
+        "statusCode": 200,
+        "body": json.dumps({ 
+            "internal_token": internalToken
+        })
+    }
+    return response
+  
 #send in a token, looks up user, and returns a token with user scope
 def auth(event, context):
     
@@ -32,7 +52,7 @@ def auth(event, context):
     #verify & decode Abaxx ID
     id_token = verify_token(body['token'])
    
-    #Decoded data from tokeb AbaxxID Identity and username
+    #Decoded data from token AbaxxID Identity and username
     identity = id_token['data']['signature']
     user = 'MOPS4'
 
@@ -72,6 +92,12 @@ def auth(event, context):
         #return Token
         response = {
         "statusCode": 200,
+        "headers": {
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Headers':'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
+        'Access-Control-Allow-Credentials' : 'true',
+        'Content-Type': 'application/json'
+         },
         "body": json.dumps({ 
             "token": internalToken
         })
@@ -82,6 +108,12 @@ def auth(event, context):
         internalToken = encodeInternalToken(identity,'pending', 'pending:pending' )
         response = {
         "statusCode": 200,
+        "headers": {
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Headers':'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
+        'Access-Control-Allow-Credentials' : 'true',
+        'Content-Type': 'application/json'
+         },
         "body": json.dumps({ 
             "token": internalToken
         })
