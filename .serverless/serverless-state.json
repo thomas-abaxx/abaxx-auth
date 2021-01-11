@@ -14,7 +14,7 @@
         "JWT_SECRET": "XaA6JrXR1G0",
         "JWT_ALGORITHM": "HS256",
         "JWT_TOKEN_EXPIRY": 86400,
-        "SECRETKEY": "secret",
+        "SECRETKEY": "UjXn2r5u8x/A?D(G-KaPdSgVkYp3s6v9y$B&E)H@MbQeThWmZq4t7w!z%C*F-JaN",
         "DOMAIN": "auth",
         "DB_HOST": "localhost",
         "DB_PORT": 5432,
@@ -173,7 +173,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/abaxx-auth/dev/1609863958914-2021-01-05T16:25:58.914Z/abaxx-auth.zip"
+                "S3Key": "serverless/abaxx-auth/dev/1610368950449-2021-01-11T12:42:30.449Z/abaxx-auth.zip"
               },
               "FunctionName": "abaxx-auth-dev-auth",
               "Handler": "handler.temp_function",
@@ -191,7 +191,7 @@
                   "JWT_SECRET": "XaA6JrXR1G0",
                   "JWT_ALGORITHM": "HS256",
                   "JWT_TOKEN_EXPIRY": 86400,
-                  "SECRETKEY": "secret",
+                  "SECRETKEY": "UjXn2r5u8x/A?D(G-KaPdSgVkYp3s6v9y$B&E)H@MbQeThWmZq4t7w!z%C*F-JaN",
                   "DOMAIN": "auth",
                   "DB_HOST": "localhost",
                   "DB_PORT": 5432,
@@ -209,14 +209,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "AuthLambdaVersion8QsPgUtbCvQDdQ8rPGEZvpAXOqzdp1YDMARbXOrKg": {
+          "AuthLambdaVersionuz4m6dsrsRY6124GbbhYasd2Khb0LkVH9W3KUujV9k": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AuthLambdaFunction"
               },
-              "CodeSha256": "1YHroYtkyJsE5x79J/UmUGfLQvTzPIYT7HyXECaAQoI="
+              "CodeSha256": "PtFQco6dJhnwS1V9ZSAlt39/o2MIhHasimLOuHoOncQ="
             }
           },
           "ApiGatewayRestApi": {
@@ -334,7 +334,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1609863948181": {
+          "ApiGatewayDeployment1610368939922": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -394,7 +394,7 @@
           "AuthLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AuthLambdaVersion8QsPgUtbCvQDdQ8rPGEZvpAXOqzdp1YDMARbXOrKg"
+              "Ref": "AuthLambdaVersionuz4m6dsrsRY6124GbbhYasd2Khb0LkVH9W3KUujV9k"
             }
           },
           "ServiceEndpoint": {
@@ -513,6 +513,7 @@
           {
             "http": {
               "path": "auth",
+              "method": "post",
               "cors": {
                 "origins": [
                   "*"
@@ -532,7 +533,6 @@
                 ],
                 "allowCredentials": false
               },
-              "method": "post",
               "integration": "AWS_PROXY"
             }
           }
@@ -543,7 +543,7 @@
         "timeout": 6,
         "runtime": "python3.7",
         "vpc": {},
-        "versionLogicalId": "AuthLambdaVersion8QsPgUtbCvQDdQ8rPGEZvpAXOqzdp1YDMARbXOrKg"
+        "versionLogicalId": "AuthLambdaVersionuz4m6dsrsRY6124GbbhYasd2Khb0LkVH9W3KUujV9k"
       }
     },
     "serviceFilename": "serverless.yml",
@@ -552,7 +552,7 @@
     "artifact": "/Users/tobrien/development/abaxx/abaxx-auth/.serverless/abaxx-auth.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/abaxx-auth/dev/1609863958914-2021-01-05T16:25:58.914Z",
+    "artifactDirectoryName": "serverless/abaxx-auth/dev/1610368950449-2021-01-11T12:42:30.449Z",
     "artifact": "abaxx-auth.zip"
   }
 }

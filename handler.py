@@ -9,6 +9,7 @@ import os
 import json
 import logging
 import time
+import random
 
 # from modules import *
 from datetime import timedelta, datetime as dt
@@ -29,10 +30,16 @@ def temp_function(event, context):
     id_token = verify_token(body['token'])
     #Decoded data from token AbaxxID Identity and username
     identity = id_token['sub']
+
     role = 'clearing_super_user'
-  
+    # scope = 'admin:admin'
+    userId = 'testUser'
+
+    possibleScope = ['admin:admin', 'pending:pending', 'read:orders', 'write:orders']
+    scope = random.choice(possibleScope)
+    print(scope)
     #Create New Token with Scope
-    internalToken = encodeInternalToken(identity,role, 'admin:admin')
+    internalToken = encodeInternalToken(identity,role, scope , userId)
 
     response = {
         "statusCode": 200,
@@ -93,7 +100,7 @@ def auth(event, context):
         print(uniqueScope)
 
         #Create New Token with Scope (oooOOooOO)
-        internalToken = encodeInternalToken(identity,roles, uniqueScope)
+        internalToken = encodeInternalToken(identity,roles, uniqueScope, 'userID')
         #return Token
         response = {
         "statusCode": 200,
@@ -109,7 +116,7 @@ def auth(event, context):
 
     else:
         # Generate a PENDING scope token
-        internalToken = encodeInternalToken(identity,'pending', 'pending:pending' )
+        internalToken = encodeInternalToken(identity,'pending', 'pending:pending', 'userId' )
         response = {
         "statusCode": 200,
         "headers": {
@@ -158,10 +165,11 @@ def getCinnoberRoles(user):
     userRoles = user['rolesList'].split(",")
     return userRoles
 
-def encodeInternalToken(identity, roles, scope):
+def encodeInternalToken(identity, roles, scope, userId):
     signed = jwt.encode({
        'exp':  dt.utcnow() + timedelta(days=1, seconds=0),
        'data': 'signature',
+       'user': userId,
        'sub': identity,
        'scope': roles,
        'permissions': scope,

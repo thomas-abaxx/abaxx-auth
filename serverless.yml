@@ -10,7 +10,7 @@ provider:
     JWT_SECRET: XaA6JrXR1G0
     JWT_ALGORITHM: HS256
     JWT_TOKEN_EXPIRY: 86400
-    SECRETKEY: secret
+    SECRETKEY: UjXn2r5u8x/A?D(G-KaPdSgVkYp3s6v9y$B&E)H@MbQeThWmZq4t7w!z%C*F-JaN
     DOMAIN: auth
     DB_HOST: localhost
     DB_PORT: 5432
